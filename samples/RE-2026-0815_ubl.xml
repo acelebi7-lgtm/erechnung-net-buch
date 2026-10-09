@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <!-- 1. Kopf: Kennung, Nummer, Datum, Typ, Währung -->
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+  <cbc:ID>RE-2026-0815</cbc:ID>
+  <cbc:IssueDate>2026-10-09</cbc:IssueDate>
+  <cbc:DueDate>2026-11-08</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>#AAI#Vielen Dank für Ihren Auftrag.</cbc:Note>
+  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:BuyerReference>991-12345-73</cbc:BuyerReference>
+  <cac:OrderReference>
+    <cbc:ID>B-2026-4711</cbc:ID>
+  </cac:OrderReference>
+  <!-- 2. Verkäufer (BG-4) mit Kontakt (BG-6) -->
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="EM">rechnung@muster-buerobedarf.example</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Industriestraße 12</cbc:StreetName>
+        <cbc:CityName>Kassel</cbc:CityName>
+        <cbc:PostalZone>34117</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>DE123456789</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Muster Bürobedarf GmbH</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Erika Beispiel</cbc:Name>
+        <cbc:Telephone>+49 561 123456</cbc:Telephone>
+        <cbc:ElectronicMail>erika.beispiel@muster-buerobedarf.example</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <!-- 3. Käufer (BG-7) -->
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="EM">e-rechnung@beispielhausen.example</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Rathausplatz 1</cbc:StreetName>
+        <cbc:CityName>Beispielhausen</cbc:CityName>
+        <cbc:PostalZone>37242</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Stadt Beispielhausen</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <!-- 4. Lieferung und Zahlung -->
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-10-07</cbc:ActualDeliveryDate>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>58</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>DE89370400440532013000</cbc:ID>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Zahlbar innerhalb von 30 Tagen ohne Abzug.</cbc:Note>
+  </cac:PaymentTerms>
+  <!-- 5. Steuern (BG-23) und Summen (BG-22) -->
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="EUR">42.71</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">224.80</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">42.71</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>19</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="EUR">224.80</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">224.80</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="EUR">267.51</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="EUR">267.51</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <!-- 6. Positionen (BG-25) -->
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">10</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">45.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>Kopierpapier A4, 500 Blatt</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>19</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">4.50</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">2</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">179.80</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>Toner schwarz, Typ XY</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>19</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">89.90</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+</ubl:Invoice>

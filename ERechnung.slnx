@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ERechnung.Api/ERechnung.Api.csproj" />
+    <Project Path="src/ERechnung.Core/ERechnung.Core.csproj" />
+    <Project Path="src/ERechnung.Worker/ERechnung.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ERechnung.SelfTest/ERechnung.SelfTest.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/ERechnung.Stats/ERechnung.Stats.csproj" />
+  </Folder>
+</Solution>
